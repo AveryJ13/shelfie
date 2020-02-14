@@ -17,5 +17,10 @@ module.exports = {
         const dbInstance = req.app.get('db')
         const { deleteId } = req.params
         dbInstance.delete(deleteId).then(res.sendStatus(200)).catch(err => console.log(err))
+    },
+    edit: (req, res) => {
+        dbInstance.edit(id)
+        const { id } = req.params
+        const { name, price, img } = req.body
     }
 }

@@ -16,10 +16,9 @@ function Dashboard(props) {
                 Name: {el.name}
                 Price: {el.price}
                 Img: {el.img}
-                <Product deleteHandler={deleteHandler} Dashboard={props.Dashboard}
+                <Product id={el.id} deleteHandler={deleteHandler} Dashboard={props.Dashboard}
                     HandleEdit={props.HandleEdit} />
                 <button onClick={() => deleteHandler(el.id)}>Delete</button>
-                <button>Edit</button>
             </div>
         )
     })
