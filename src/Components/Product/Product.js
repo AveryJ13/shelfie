@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Dashboard from '../Dashboard/Dashboard'
+import '../Dashboard/Dashboard.css'
 
 class Product extends Component {
     constructor(props) {
@@ -36,14 +37,19 @@ class Product extends Component {
                         <input placeHolder='new name' onChange={(e) => this.handleChange1(e.target.value)} />
                         <input placeHolder='new price' onChange={(e) => this.handleChange2(e.target.value)} />
                         <input placeHolder='new img' onChange={(e) => this.handleChange3(e.target.value)} />
-                        <button onClick={() => {
+                        <button className='editButton' onClick={() => {
                             this.toggleEdit()
-                            this.props.HandleEdit()
+
+                            this.props.HandleEdit(this.props.id, {
+                                name: this.state.input1,
+                                price: this.state.input2,
+                                img: this.state.input3
+                            })
                         }
                         }>Confirm</button>
                     </div>
                 ) : (
-                        <button onClick={() => { this.toggleEdit() }}>Edit</button>
+                        <button className='editButton' onClick={() => { this.toggleEdit() }}>Edit</button>
                     )}
 
             </div>

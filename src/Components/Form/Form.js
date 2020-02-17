@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Form.css'
 class Form extends Component {
     constructor(props) {
         super()
@@ -50,14 +51,17 @@ class Form extends Component {
     render() {
         console.log(this.state.input1)
         return (
-
-            <div>
-                Form
-                <input value={this.state.input1} placeholder='name' onChange={(e) => { this.handleInput1(e.target.value) }} />
-                <input value={this.state.input2} placeholder='price' onChange={(e) => { this.handleInput2(e.target.value) }} />
-                <input value={this.state.input3} placeholder='img' onChange={(e) => { this.handleInput3(e.target.value) }} />
-                <button onClick={() => this.handleAdd()}>Add</button>
-                <button onClick={() => this.resetInputs()}>Cancel</button>
+            <div className='stick'>
+                <div className='fullForm'>
+                    <h3>FORM</h3>
+                    <input className='inputStyle' value={this.state.input1} placeholder='name' onChange={(e) => { this.handleInput1(e.target.value) }} />
+                    <input className='inputStyle' value={this.state.input2} placeholder='price' onChange={(e) => { this.handleInput2(e.target.value) }} />
+                    <input className='inputStyle' value={this.state.input3} placeholder='img' onChange={(e) => { this.handleInput3(e.target.value) }} />
+                    <div className='buttonContainer'>
+                        <div><button className='button1' onClick={() => this.handleAdd()}>Add</button></div>
+                        <div className='buttonSpacing'><button className='button2' onClick={() => this.resetInputs()}>Cancel</button></div>
+                    </div>
+                </div>
             </div>
         )
     }

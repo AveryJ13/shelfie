@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Product from '../Product/Product'
 import axios from 'axios'
+import './Dashboard.css'
 
 
 function Dashboard(props) {
@@ -12,13 +13,20 @@ function Dashboard(props) {
 
     const display = props.Dashboard.map(el => {
         return (
-            <div>
-                Name: {el.name}
-                Price: {el.price}
-                Img: {el.img}
-                <Product id={el.id} deleteHandler={deleteHandler} Dashboard={props.Dashboard}
-                    HandleEdit={props.HandleEdit} />
-                <button onClick={() => deleteHandler(el.id)}>Delete</button>
+            <div className='alignBoxesCenter'>
+                <div className='productBox'>
+                    <div className='groupedText'>
+                        <div className='productImage'><img src={el.img} className='imageSelf' /></div>
+                        <div className='name' >Name: {el.name} </div>
+                        <div className='price'>Price: ${el.price}</div>
+
+                    </div>
+                    <div className='buttons'>
+                        <div className='editContainer'><Product id={el.id} deleteHandler={deleteHandler} Dashboard={props.Dashboard}
+                            HandleEdit={props.HandleEdit} /></div>
+                        <div className='deleteContainer'><button className='deleteButton' onClick={() => deleteHandler(el.id)}>Delete</button></div>
+                    </div>
+                </div>
             </div>
         )
     })
@@ -27,8 +35,8 @@ function Dashboard(props) {
 
     return (
         <div>
-            Dashboard
-                {display}
+            <h3>DASHBOARD</h3>
+            {display}
 
         </div>
     )

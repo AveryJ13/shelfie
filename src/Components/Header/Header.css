@@ -1,0 +1,22 @@
+.header {
+  background: red;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  position: sticky;
+  top: 0;
+}
+
+.text {
+  margin-left: 15px;
+  color: white;
+}
+
+.image {
+  margin-left: 15px;
+  height: 30px;
+}

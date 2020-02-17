@@ -10,7 +10,7 @@ module.exports = {
     post: (req, res) => {
         const dbInstance = req.app.get('db')
         const { name, price, img } = req.body
-        dbInstance.create_product(name, price, img).then(res.sendStatus(200))
+        dbInstance.create_product([name, price, img]).then(res.sendStatus(200))
 
     },
     delete: (req, res) => {
@@ -19,8 +19,9 @@ module.exports = {
         dbInstance.delete(deleteId).then(res.sendStatus(200)).catch(err => console.log(err))
     },
     edit: (req, res) => {
-        dbInstance.edit(id)
+        const dbInstance = req.app.get('db')
         const { id } = req.params
         const { name, price, img } = req.body
+        dbInstance.edit_name([name, price, img, id]).then(res.sendStatus(200))
     }
 }

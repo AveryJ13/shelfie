@@ -1,0 +1,71 @@
+.productBox {
+  background: red;
+  width: 30vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  margin-top: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 16px -5px #000000;
+  box-shadow: 1px 1px 16px -5px #000000;
+}
+
+.alignBoxesCenter {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.groupedText {
+  display: flex;
+  flex-direction: row;
+}
+
+.editContainer {
+}
+
+.deleteContainer {
+  margin-left: 15px;
+}
+
+.deleteButton {
+  background: rgb(59, 182, 59);
+  height: 35px;
+  border-radius: 15px;
+}
+
+.editButton {
+  background: rgb(59, 182, 59);
+  height: 35px;
+  border-radius: 15px;
+}
+
+.price {
+  margin-left: 8px;
+}
+
+.productImage {
+  width: 50px;
+}
+
+.imageSelf {
+  width: 25px;
+}
+
+.name {
+  margin-left: 8px;
+}

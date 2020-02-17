@@ -20,23 +20,33 @@ class App extends Component {
     axios.get('/api/inventory').then(res => { this.setState({ inventory: res.data }) })
   }
 
+  componentDidUpdate = () => {
+    axios.get('/api/inventory').then(res => { this.setState({ inventory: res.data }) })
+  }
+
   handlePost = () => {
     axios.post('/api/product').then(res => { this.setState({ inventory: res.data }) })
   }
 
-  handleEdit = (editId) => {
-    this.setState({ inventoryId: editId })
+  handleEdit = (editId, obj) => {
+    axios.put(`/api/inventory/${editId}`, obj)
   }
+
 
   render() {
 
     return (
 
-      < div >
-        <Dashboard GetRequest={this.componentDidMount} Dashboard={this.state.inventory}
-          HandleEdit={this.handleEdit} />
-        <Form GetRequest={this.componentDidMount} inventoryId={this.state.inventoryId} />
+      < div className='App'>
         <Header />
+        <div className='spacing'>
+          <Dashboard GetRequest={this.componentDidMount} Dashboard={this.state.inventory}
+            HandleEdit={this.handleEdit} />
+          <div className='formSpacing'> <Form GetRequest={this.componentDidMount} inventoryId={this.state.inventoryId} /></div>
+
+
+        </div>
+
       </div >
     )
   }
